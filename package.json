@@ -1,0 +1,24 @@
+{
+  "name": "backenddigdeeper",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "javaScript",
+    "backend"
+  ],
+  "homepage": "https://github.com/shivanisamant981/BackendDigDeeper#readme",
+  "bugs": {
+    "url": "https://github.com/shivanisamant981/BackendDigDeeper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivanisamant981/BackendDigDeeper.git"
+  },
+  "license": "ISC",
+  "author": "Shivani Samant",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
