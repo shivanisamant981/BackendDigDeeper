@@ -1,4 +1,5 @@
 import mongoose,{Schema} from "mongoose"
+import bcrypt from 'bcrypt'
 
 const userSchema=new Schema({
     username:{
@@ -35,7 +36,7 @@ const userSchema=new Schema({
     },
     watchHistory:[
         {
-            type:Schema.Type.ObjectId,
+            type:Schema.Types.ObjectId,
             ref:"Video",
         }
     ],
@@ -50,7 +51,7 @@ const userSchema=new Schema({
 
 userSchema.pre("save",async function(next){
     if(!this.isModified("password"))return next();
-    this.password=bcrypt.hash(this.password,10)
+    this.password=await bcrypt.hash(this.password,10)
     next()
 })
 userSchema.method.isPasswordCorrect=async function(password){
@@ -86,4 +87,4 @@ userSchema.methods.generateRefreshToken=function(){
 
 
 
-const User=mongoose.model("User",userSchema)
+export const User=mongoose.model("User",userSchema)
